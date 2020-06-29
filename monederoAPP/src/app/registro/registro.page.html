@@ -1,0 +1,136 @@
+
+<ion-content>
+    <ion-header>
+        <ion-toolbar color="ublue">
+            <ion-title color="light">Registro de usuario</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="ion-padding">
+
+        <ion-row>
+            <ion-col size="12" size-sm="10" offset-sm="1" size-md="8" offset-md="2" size-lg="6" offset-lg="3" size-xl="4"
+                     offset-xl="4">
+
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title class="ion-text-center">MoneyUCAB</ion-card-title>
+                    </ion-card-header>
+
+                    <ion-card-content>
+                        <form #form="ngForm" role="form" autocomplete="off" (submit)="onSubmit(form)">
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Año de registro</ion-label>
+                                <ion-input #ano_registro="ngModel" name="ano_registro" [(ngModel)]="formModel.ano_registro" class="form-control" placeholder="Año de registro"  type="number" required ></ion-input>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Mes de registro<</ion-label>
+                                <ion-input #mes_registro="ngModel" name="mes_registro" [(ngModel)]="formModel.mes_registro" class="form-control" placeholder="Mes de registro"  required ></ion-input>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Día de registro</ion-label>
+                                <ion-input #dia_registro="ngModel" name="dia_registro" [(ngModel)]="formModel.dia_registro" class="form-control" placeholder="Día de registro"  required ></ion-input>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Nro de identificación</ion-label>
+                                <ion-input #nro_identificacion="ngModel" name="nro_identificacion" [(ngModel)]="formModel.nro_identificacion" class="form-control" placeholder="Nro de indentificación"  required ></ion-input>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Teléfono</ion-label>
+                                <ion-input #telefono="ngModel" name="telefono" [(ngModel)]="formModel.telefono" class="form-control" placeholder="Teléfono"  required ></ion-input>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Dirección</ion-label>
+                                <ion-input #direccion="ngModel" name="direccion" [(ngModel)]="formModel.direccion" class="form-control" placeholder="Dirección"  required ></ion-input>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Estatus</ion-label>
+                                <ion-input #estatus="ngModel" name="estatus" [(ngModel)]="formModel.estatus" class="form-control" placeholder="Estatus"  required ></ion-input>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-list>
+                                    <ion-radio-group #comercio="ngModel" name="comercio" [(ngModel)]="formModel.comercio">
+                                        <ion-row>
+                                            <ion-col>
+                                                <ion-item>
+                                                    <ion-label>Comercio</ion-label>
+                                                    <ion-radio mode="md" item-left [value]="true"></ion-radio>
+                                                </ion-item>
+                                            </ion-col>
+                                            <ion-col>
+                                                <ion-item>
+                                                    <ion-label>Persona</ion-label>
+                                                    <ion-radio mode="md" item-left [value]="false"></ion-radio>
+                                                </ion-item>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-radio-group>
+                                </ion-list>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Nombre</ion-label>
+                                <ion-input #nombre="ngModel" name="nombre" [(ngModel)]="formModel.nombre" class="form-control" placeholder="Nombre"  required ></ion-input>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Apellido</ion-label>
+                                <ion-input #apellido="ngModel" name="apellido" [(ngModel)]="formModel.apellido" class="form-control" placeholder="Apellido"  required ></ion-input>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Año de nacimiento</ion-label>
+                                <ion-input #ano_nacimiento="ngModel" name="ano_nacimiento" [(ngModel)]="formModel.ano_nacimiento" class="form-control" placeholder="Año de nacimiento"  required ></ion-input>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Mes de nacimiento</ion-label>
+                                <ion-input #mes_nacimiento="ngModel" name="mes_nacimiento" [(ngModel)]="formModel.mes_nacimiento" class="form-control" placeholder="Mes de nacimiento"  required ></ion-input>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Día de nacimiento</ion-label>
+                                <ion-input #dia_nacimiento="ngModel" name="dia_nacimiento" [(ngModel)]="formModel.dia_nacimiento" class="form-control" placeholder="Día de nacimiento"  required ></ion-input>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Razón social</ion-label>
+                                <ion-input #razon_social="ngModel" name="razon_social" [(ngModel)]="formModel.razon_social" class="form-control" placeholder="Razon social"  required ></ion-input>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Nombre de usuario</ion-label>
+                                <ion-input #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName" class="form-control" placeholder="Nombre de usuario"  required ></ion-input>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Correo</ion-label>
+                                <ion-input #Email="ngModel" name="Email" [(ngModel)]="formModel.Email" class="form-control" placeholder="Correo electrónico" type="email" required ></ion-input>
+                            </ion-item>
+
+                            <ion-item lines="none">
+                                <ion-label position="stacked">Contraseña</ion-label>
+                                <ion-input input #Password="ngModel" name="Password" [(ngModel)]="formModel.Password" class="form-control" placeholder="Contraseña" type="password" required>
+                                </ion-input>
+                            </ion-item>
+
+
+                            <ion-button expand="block" color="secondary" type="submit" >Registrar
+                            </ion-button>
+                        </form>
+                    </ion-card-content>
+                </ion-card>
+
+            </ion-col>
+        </ion-row>
+    </ion-content>
+
+</ion-content>
