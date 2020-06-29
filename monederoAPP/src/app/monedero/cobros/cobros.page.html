@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-toolbar color="ugreen">
+
+        <ion-buttons slot="start" >
+            <ion-back-button color="light" defaultHref="/post" ></ion-back-button>
+        </ion-buttons>
+
+        <ion-title color="light">Historial de Cobros</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-card >
+            <ion-card-header>
+                <ion-card-title>
+                    <h1>Cobros Activos:</h1>
+                </ion-card-title>
+            </ion-card-header>
+            <ion-item *ngFor="let cobroactivo of cobrosActivos" >
+                <ion-icon slot="start" name="flag-outline">
+                </ion-icon>
+                <ion-label>
+                    Fecha: {{cobroactivo.fecha.day}}/{{cobroactivo.fecha.month}}/{{cobroactivo.fecha.year}}
+                </ion-label>
+                <br>
+                <ion-label>
+                    Monto: {{cobroactivo.monto}}
+                </ion-label>
+                <ion-button fill="clear" (click)="onClick(cobroactivo.idPago)">
+                    <ion-icon slot="end" color="danger" name="close-circle-outline"></ion-icon>
+                </ion-button>
+            </ion-item>
+        </ion-card>
+
+        <ion-card >
+            <ion-card-header>
+                <ion-card-title>
+                    <h1>Cobros Cancelados:</h1>
+                </ion-card-title>
+            </ion-card-header>
+            <ion-item *ngFor="let cobrocancelado of cobrosCancelados" >
+                <ion-icon slot="start" name="close-outline">
+                </ion-icon>
+                <ion-label>
+                    Fecha: {{cobrocancelado.fecha.day}}/{{cobrocancelado.fecha.month}}/{{cobrocancelado.fecha.year}}
+                </ion-label>
+                <br>
+                <ion-label>
+                    Monto: {{cobrocancelado.monto}}
+                </ion-label>
+            </ion-item>
+        </ion-card>
+
+        <ion-card >
+            <ion-card-header>
+                <ion-card-title>
+                    <h1>Cobros Exitosos:</h1>
+                </ion-card-title>
+            </ion-card-header>
+            <ion-item *ngFor="let cobroexitoso of cobrosExitosos" >
+                <ion-icon slot="start" name="checkmark-outline">
+                </ion-icon>
+                <ion-label>
+                    Fecha: {{cobroexitoso.fecha.day}}/{{cobroexitoso.fecha.month}}/{{cobroexitoso.fecha.year}}
+                </ion-label>
+                <br>
+                <ion-label>
+                    Monto: {{cobroexitoso.monto}}
+                </ion-label>
+            </ion-item>
+        </ion-card>
+
+    </ion-list>
+</ion-content>
