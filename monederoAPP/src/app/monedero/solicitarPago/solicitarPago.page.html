@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar color="ugreen">
+        <ion-buttons slot="start">
+            <ion-back-button color="light" defaultHref='/post'></ion-back-button>
+        </ion-buttons>
+        <ion-title><ion-text color="light">Solicitar Pago</ion-text></ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <ion-row>
+        <ion-col size="12" size-sm="10" offset-sm="1" size-md="8" offset-md="2" size-lg="6" offset-lg="3" size-xl="4"
+                 offset-xl="4">
+            <form  [formGroup]="cobroService.formModel"  autocomplete="off" (submit)="onSubmit()">
+                <ion-list>
+
+                    <ion-input class="ion-hide" formControlName="idUsuarioSolicitante" name="idUsuario"></ion-input>
+                    <ion-item>
+                        <ion-label position="stacked">Email de receptor</ion-label>
+                        <ion-input formControlName="emailPagador" [(ngModel)]="formModel.emailPagador" type="email" name="email"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label position="stacked">Monto</ion-label>
+                        <ion-input formControlName="monto" [(ngModel)]="formModel.monto" type="number"  name="monto"></ion-input>
+                    </ion-item>
+
+
+                    <ion-button type="submit" color="uyellow"
+                                expand="block" style="color: white" id="button-guardar"
+                                class="margin-top-40" >Guardar</ion-button>
+
+                </ion-list>
+            </form>
+        </ion-col>
+    </ion-row>
+</ion-content>
