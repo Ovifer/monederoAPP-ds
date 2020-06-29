@@ -7,9 +7,9 @@ import { ReintegroService } from 'src/app/servicios/reintegro/reintegro.service'
 import { TarjetaService } from 'src/app/servicios/tarjeta/tarjeta.service';
 
 @Component({
-    selector: 'app-aprobar-reintegro',
-    templateUrl: './aprobar-reintegro.page.html',
-    styleUrls: ['./aprobar-reintegro.page.scss'],
+    selector: 'app-aprobarReintegro',
+    templateUrl: './aprobarReintegro.page.html',
+    styleUrls: ['./aprobarReintegro.page.scss'],
 })
 export class AprobarReintegroPage implements OnInit {
 
