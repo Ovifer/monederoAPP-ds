@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar color="ugreen">
+
+        <ion-buttons slot="start" >
+            <ion-back-button color="light" defaultHref="/post" ></ion-back-button>
+        </ion-buttons>
+
+        <ion-title color="light">Historial de Cobros</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-card >
+            <ion-card-header>
+                <ion-card-title>
+                    <h1>Tarjetas registradas: </h1>
+                </ion-card-title>
+            </ion-card-header>
+            <ion-item *ngFor="let tarjeta of tarjetas" >
+                <ion-icon slot="start" name="card-outline">
+                </ion-icon>
+                <ion-label>
+                    Tarjeta: {{tarjeta.numero}}
+                </ion-label>
+            </ion-item>
+        </ion-card>
+
+        <ion-card >
+            <ion-card-header>
+                <ion-card-title>
+                    <h1>Cuentas registradas: </h1>
+                </ion-card-title>
+            </ion-card-header>
+            <ion-item *ngFor="let cuenta of cuentas">
+                <ion-icon slot="start" name="journal-outline">
+                </ion-icon>
+                <ion-label>
+                    Cuenta: {{cuenta._numero}}
+                </ion-label>
+            </ion-item>
+        </ion-card>
+    </ion-list>
+</ion-content>
