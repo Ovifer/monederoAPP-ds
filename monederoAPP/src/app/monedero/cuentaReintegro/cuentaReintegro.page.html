@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar color="uyellow">
+
+        <ion-buttons slot="start" >
+            <ion-back-button color="light" defaultHref="/post" ></ion-back-button>
+        </ion-buttons>
+
+        <ion-title color="light">Pagar reintegro con cuenta</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-content>
+            <form [formGroup]="tarjetaService.formModel"  autocomplete="off" (submit)="onSubmit()">
+                <ion-list lines="full">
+
+                    <ion-input class="ion-hide" formControlName="idUsuarioSolicitante" name="idUsuarioReceptor" > </ion-input>
+
+
+                    <ion-input class="ion-hide" formControlName="monto" name="monto"></ion-input>
+
+                    <ion-input class="ion-hide" formControlName="idOperacion" name="idOperacion" ></ion-input>
+
+                    <ion-item>
+                        <ion-label>Cuentas</ion-label>
+                        <ion-select formControlName="idMedioPaga" name="idMedioPaga" ok-text="Aceptar" cancel-text="cancelar">
+                            <ion-select-option  *ngFor="let cuenta of cuentas" value="{{cuenta._idCuenta}}">{{cuenta._numero}}</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-list>
+                <ion-button type="submit" color="light_violet"
+                            expand="block" fill="outline" id="button-guardar"
+                            class="margin-top-40" >Reintegrar</ion-button>
+            </form>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
