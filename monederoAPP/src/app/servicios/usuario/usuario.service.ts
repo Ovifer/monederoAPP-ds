@@ -31,7 +31,7 @@ export class UsuariosService {
     getDatosUsuario(){
         let header = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')});
         let param = new HttpParams().set('Usuario', localStorage.getItem('email'));
-        let url = "http://localhost:5000/api/Dashboard/InformacionPersona";
+        let url = "http://localhost:49681/api/Dashboard/InformacionPersona";
         return this.http.get(url, {params: param, headers: header});
     }
 
