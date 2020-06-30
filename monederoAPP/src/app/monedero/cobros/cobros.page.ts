@@ -116,7 +116,7 @@ export class CobrosPage implements OnInit {
 
                                     this.successToast('success', 'Cobro cancelado satisfactoriamente')
                                     console.log(data);
-                                    this.router.navigate(['/post']);
+                                    this.router.navigate(['/monedero']);
                                 },
                                 err =>{
                                     console.log(err);

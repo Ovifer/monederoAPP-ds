@@ -36,7 +36,7 @@ export class SolicitarPagoPage implements OnInit {
                 this.loadingController.dismiss();
 
                 this.successToast('success', 'Cobro procesado satisfactioamente')
-                this.router.navigateByUrl('/post');
+                this.router.navigateByUrl('/monedero');
             },
             err => {
                 this.loadingController.dismiss();

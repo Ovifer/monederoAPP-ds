@@ -95,7 +95,7 @@ export class PerfilPage implements OnInit {
 
                 this.successToast('success', 'Datos modificados satisfactioamente')
 
-                this.router.navigateByUrl('/post');
+                this.router.navigateByUrl('/monedero');
             },
             err => {
                 this.loadingController.dismiss();

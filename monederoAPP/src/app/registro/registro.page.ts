@@ -45,7 +45,7 @@ export class RegistroPage implements OnInit {
         this.usuario.registrar(form.value).subscribe(
             (res:any) => {
                 console.log(res); // res JSON
-                this.router.navigateByUrl('/post');
+                this.router.navigateByUrl('/monedero');
             },
             err => {
                 console.log(err); // error JSON

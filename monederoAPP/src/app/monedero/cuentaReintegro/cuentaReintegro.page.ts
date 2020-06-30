@@ -79,13 +79,13 @@ export class CuentaReintegroPage implements OnInit {
                 console.log(res);
                 this.successToast('success', 'Reintegro procesado satisfactoriamente')
 
-                this.router.navigateByUrl('/post/aprobar-reintegro');
+                this.router.navigateByUrl('/monedero/aprobar-reintegro');
             },
             err => {
                 this.loadingController.dismiss();
                 console.log(err);
                 this.presentToast('danger', 'Ha ocurrido un error al realizar el reintegro');
-                this.router.navigateByUrl('/post');
+                this.router.navigateByUrl('/monedero');
             }
         );
     }
