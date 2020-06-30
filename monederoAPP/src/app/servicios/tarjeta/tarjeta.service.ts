@@ -27,7 +27,7 @@ export class TarjetaService {
         let header = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')});
         let param = new HttpParams().set('IdUsuario', localStorage.getItem('idUsuario'));
 
-        return this.http.get('http://localhost:5000/api/Dashboard/Tarjetas', {params: param, headers: header})
+        return this.http.get('http://localhost:49681/api/Dashboard/Tarjetas', {params: param, headers: header})
     }
 
     crearReintegro(reintegroactivo){
@@ -48,7 +48,7 @@ export class TarjetaService {
 
         console.log(body);
 
-        return this.http.post('http://localhost:5000/api/transfer/RealizarReintegroTarjeta', body, {headers: header})
+        return this.http.post('http://localhost:49681/api/transfer/RealizarReintegroTarjeta', body, {headers: header})
     }
 
 
@@ -65,7 +65,7 @@ export class TarjetaService {
 
         console.log(body);
 
-        return this.http.post('http://localhost:5000/api/transfer/RealizarReintegroCuenta', body, {headers: header})
+        return this.http.post('http://localhost:49681/api/transfer/RealizarReintegroCuenta', body, {headers: header})
     }
 
     monederoReintegro(){
@@ -81,7 +81,7 @@ export class TarjetaService {
 
         console.log(body);
 
-        return this.http.post('http://localhost:5000/api/transfer/RealizarReintegroMonedero', body, {headers: header})
+        return this.http.post('http://localhost:49681/api/transfer/RealizarReintegroMonedero', body, {headers: header})
     }
 
 }

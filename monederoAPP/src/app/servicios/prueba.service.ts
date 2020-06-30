@@ -67,7 +67,7 @@ export class PaymentOrderService {
 
         let header = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')});
         let param = new HttpParams().set('IdUsuario', localStorage.getItem('idUsuario'));
-        let url = "http://localhost:5000/api/monedero/Consultar";
+        let url = "http://localhost:49681/api/monedero/Consultar";
 
 
         return this.http.get(url, {params: param, headers: header});

@@ -22,21 +22,21 @@ export class CobroService {
         let header = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')});
         let param = new HttpParams().set('idUsuario', localStorage.getItem('idUsuario'))
             .set('solicitante', localStorage.getItem('idUsuario'))
-        return this.http.get('http://localhost:5000/api/dashboard/cobrosactivos', {params: param, headers: header})
+        return this.http.get('http://localhost:49681/api/dashboard/cobrosactivos', {params: param, headers: header})
     }
 
     cobrosCancelados(){
         let header = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')});
         let param = new HttpParams().set('idUsuario', localStorage.getItem('idUsuario'))
             .set('solicitante', localStorage.getItem('idUsuario'))
-        return this.http.get('http://localhost:5000/api/dashboard/CobrosCancelados', {params: param, headers: header})
+        return this.http.get('http://localhost:49681/api/dashboard/CobrosCancelados', {params: param, headers: header})
     }
 
     cobrosExitosos(){
         let header = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')});
         let param = new HttpParams().set('idUsuario', localStorage.getItem('idUsuario'))
             .set('solicitante', localStorage.getItem('idUsuario'))
-        return this.http.get('http://localhost:5000/api/dashboard/CobrosExitosos', {params: param, headers: header})
+        return this.http.get('http://localhost:49681/api/dashboard/CobrosExitosos', {params: param, headers: header})
     }
 
     cancelarCobro(IdCobro){
@@ -58,7 +58,7 @@ export class CobroService {
         console.log(options);
 
         return this.http
-            .post('http://localhost:5000/api/Transfer/CancelarCobro',null, options)
+            .post('http://localhost:49681/api/Transfer/CancelarCobro',null, options)
     }
 
 
@@ -70,6 +70,6 @@ export class CobroService {
             monto: this.formModel.value.monto
         }
         console.log(body);
-        return this.http.post('http://localhost:5000/api/Transfer/realizarcobro',body, {headers: header});
+        return this.http.post('http://localhost:49681/api/Transfer/realizarcobro',body, {headers: header});
     }
 }
