@@ -60,7 +60,7 @@ export class LoginPage implements OnInit {
                 localStorage.setItem('email', this.formModel.email);
                 this.loadingController.dismiss();
 
-                this.router.navigateByUrl('/post');
+                this.router.navigateByUrl('/monedero');
                 console.log("token", res.result.token);
                 console.log("usuario", this.formModel.email);
             },
