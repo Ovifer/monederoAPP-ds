@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="ugreen">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>MoneyUCAB</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-subtitle class="ion-text-left" class="saldo_disponible">Saldo disponible</ion-card-subtitle>
+    <ion-card-title  class="saldo">{{saldo}}<ion-icon name="logo-usd" class="money_icon"></ion-icon></ion-card-title>
+    <ion-card-subtitle class="titular" color="ublue">Titular de la cuenta</ion-card-subtitle>
+  </ion-card>
+
+
+  <ion-list>
+    <ion-card *ngFor="let order of orders" [routerLink]="['/payment-order', order.id]">
+      <ion-item >
+        <ion-avatar slot="start">
+          <ion-img [src]="order.imageURL"></ion-img>
+        </ion-avatar>
+        <ion-card-header>
+          <ion-card-subtitle>{{order.nombre_titular}}</ion-card-subtitle>
+          <ion-card-title>{{order.monto}}</ion-card-title>
+        </ion-card-header>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+</ion-content>
+
+
+
+<style>
+  .saldo{
+    font-size: 40px;
+    text-align: center;
+    color: #3ca7d0;
+  }
+  .money_icon{
+    font-size: 32px;
+  }
+  .saldo_disponible{
+    font-weight: bold;
+    font-size: 20px;
+    color: #3ca7d0;
+    padding: 16px;
+  }
+  .titular{
+    text-align: center;
+    color: #3ca7d0;
+    padding: 16px;
+  }
+</style>
