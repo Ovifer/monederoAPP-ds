@@ -5,7 +5,7 @@
             <ion-back-button color="light" defaultHref="/monedero" ></ion-back-button>
         </ion-buttons>
 
-        <ion-title color="light">Historial de Cobros</ion-title>
+        <ion-title color="light">Historial de Pagos</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -14,7 +14,7 @@
         <ion-card >
             <ion-card-header>
                 <ion-card-title>
-                    <h1>Cobros Activos:</h1>
+                    <h1>Pagos Activos:</h1>
                 </ion-card-title>
             </ion-card-header>
             <ion-item *ngFor="let cobroactivo of cobrosActivos" >
@@ -36,7 +36,7 @@
         <ion-card >
             <ion-card-header>
                 <ion-card-title>
-                    <h1>Cobros Cancelados:</h1>
+                    <h1>Pagos Cancelados:</h1>
                 </ion-card-title>
             </ion-card-header>
             <ion-item *ngFor="let cobrocancelado of cobrosCancelados" >
@@ -55,7 +55,7 @@
         <ion-card >
             <ion-card-header>
                 <ion-card-title>
-                    <h1>Cobros Exitosos:</h1>
+                    <h1>Pagos Exitosos:</h1>
                 </ion-card-title>
             </ion-card-header>
             <ion-item *ngFor="let cobroexitoso of cobrosExitosos" >

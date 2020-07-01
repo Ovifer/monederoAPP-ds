@@ -17,21 +17,21 @@ export class ReintegroService {
         let header = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')});
         let param = new HttpParams().set('idUsuario', localStorage.getItem('idUsuario'))
             .set('solicitante', this.common)
-        return this.http.get('http://localhost:49681/api/Dashboard/ReintegrosActivos', {params: param, headers: header})
+        return this.http.get('http://66.42.95.58/api/Dashboard/ReintegrosActivos', {params: param, headers: header})
     }
 
     reintegrosCancelados(){
         let header = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')});
         let param = new HttpParams().set('idUsuario', localStorage.getItem('idUsuario'))
             .set('solicitante', this.common)
-        return this.http.get('http://localhost:49681/api/Dashboard/ReintegrosCancelados', {params: param, headers: header})
+        return this.http.get('http://66.42.95.58/api/Dashboard/ReintegrosCancelados', {params: param, headers: header})
     }
 
     reintegrosExitosos(){
         let header = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')});
         let param = new HttpParams().set('idUsuario', localStorage.getItem('idUsuario'))
             .set('solicitante', this.common)
-        return this.http.get('http://localhost:49681/api/Dashboard/ReintegrosExitosos', {params: param, headers: header})
+        return this.http.get('http://66.42.95.58/api/Dashboard/ReintegrosExitosos', {params: param, headers: header})
     }
 
     cancelarReintegro(IdReintegro){
@@ -53,7 +53,7 @@ export class ReintegroService {
         console.log(options);
 
         return this.http
-            .post('http://localhost:49681/api/transfer/CancelarReintegro',null, options)
+            .post('http://66.42.95.58/api/transfer/CancelarReintegro',null, options)
     }
 
 }

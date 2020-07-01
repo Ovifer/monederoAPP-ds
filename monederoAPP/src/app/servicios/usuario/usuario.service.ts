@@ -25,23 +25,23 @@ export class UsuariosService {
 
     estadosCiviles(){
         let header = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')});
-        return this.http.get('http://localhost:49681/api/Dashboard/EstadosCiviles', {headers: header})
+        return this.http.get('http://66.42.95.58/api/Dashboard/EstadosCiviles', {headers: header})
     }
 
     getDatosUsuario(){
         let header = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')});
         let param = new HttpParams().set('Usuario', localStorage.getItem('email'));
-        let url = "http://localhost:49681/api/Dashboard/InformacionPersona";
+        let url = "http://66.42.95.58/api/Dashboard/InformacionPersona";
         return this.http.get(url, {params: param, headers: header});
     }
 
     registrar(registerForm) {
 
-        return this.http.post('http://localhost:49681/api/Authentication/Register', registerForm);
+        return this.http.post('http://66.42.95.58/api/Authentication/Register', registerForm);
     }
 
     iniciarSesion(loginForm){
-        return this.http.post('http://localhost:49681/api/Authentication/Login', loginForm)
+        return this.http.post('http://66.42.95.58/api/Authentication/Login', loginForm)
     }
 
     modificarUsaurio(){
@@ -55,14 +55,14 @@ export class UsuariosService {
             idEstadoCivil : Number(this.usuarioModel.value.idEstadoCivil),
             idUsuario: parseInt(localStorage.getItem('idUsuario'))
         };
-        return this.http.post('http://localhost:49681/api/Authentication/Modification', body , {headers: header});
+        return this.http.post('http://66.42.95.58/api/Authentication/Modification', body , {headers: header});
     }
 
     ejecutarCierre(){
 
         let header = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('token')});
         let param = new HttpParams().set('IdUsuario', localStorage.getItem('idUsuario'));
-        let url = "http://localhost:49681/api/HistorialOperaciones/Ejecutarcierre";
+        let url = "http://66.42.95.58/api/HistorialOperaciones/Ejecutarcierre";
 
 
         return this.http.get(url, {params: param, headers: header});
